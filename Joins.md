@@ -3,19 +3,34 @@
  ### *1 Metro Beans Cafe:*
 ***
 
-> 1. Display each order with the customer name and item name.
+> **1. Display each order with the customer name and item name.**
 
-**select** customer_name, item_name
-**from** bean_customers, bean_orders
+>**select** customer_name, item_name
+>>**from** bean_customers, bean_orders
+
 ![CName - itemN](image.png)
-> 2. Display customer name, suburb, order date, and order amount.
+***
+> **2. Display customer name, suburb, order date, and order amount.**
 
-**select** customer_name, suburb, order_date, order_amount
-**from** bean_customers, bean_orders
+>**select** customer_name, suburb, order_date, order_amount
+>>**from** bean_customers, bean_orders
+
+
 ![alt text](image-1.png)
-> 3. Find all orders made by Gold loyalty customers.
 
-s
+> **3. Find all orders made by Gold loyalty customers.**
+
+`I remember being able to sort the data, so I searched it up did the date :P`
+
+>**select** *
+>>**from** bean_orders o
+>>>**join** bean_customers c **on** c.customer_id *= o.customer_id
+>>>>**where** loyalty_level = 'Gold'
+>>>>>**order by** order_date
+
+![alt text](image-2.png)
+
+
 > 4. Find all orders from customers who live in Broadmeadows.
 
 
